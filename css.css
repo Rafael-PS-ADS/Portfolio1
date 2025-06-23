@@ -1,18 +1,16 @@
-/* Importação de fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
 
 :root {
-    /* Paleta de Cores para Modo Escuro */
-    --primary-color: #82AAFF; /* Azul suave para títulos, logo, linha da timeline */
-    --secondary-color: #B0BEC5; /* Cinza azulado claro para detalhes */
-    --accent-color: #C3E88D; /* Verde-claro para destaque/botões/hover */
-    --text-color-dark: #ECEFF1; /* Texto quase branco para títulos */
-    --text-color-light: #CFD8DC; /* Texto cinza claro para parágrafos */
-    --bg-light: #263238; /* Fundo suave de seções (cards, skills) */
-    --bg-dark: #212121; /* Fundo principal do body, header, footer */
-    --white: #ffffff; /* Mantido para usos muito específicos ou bordas */
-    --border-color: #37474F; /* Cor para bordas sutis */
-    --card-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Sombra mais escura */
+    --primary-color: #82AAFF;
+    --secondary-color: #B0BEC5;
+    --accent-color: #C3E88D;
+    --text-color-dark: #ECEFF1;
+    --text-color-light: #CFD8DC;
+    --bg-light: #263238;
+    --bg-dark: #212121;
+    --white: #ffffff;
+    --border-color: #37474F;
+    --card-shadow: 0 8px 20px rgba(0,0,0,0.4);
     --transition-speed: 0.3s ease-in-out;
 }
 
@@ -64,20 +62,19 @@ h2::after {
 }
 
 .section-padded {
-    padding: 13px 8%; 
+    padding: 13px 8%;
 }
 
 .bg-light {
     background-color: var(--bg-light);
 }
 
-/* Header e Navegação */
 header {
     background-color: var(--bg-dark);
     color: var(--text-color-dark);
     padding: 1rem 8%;
     display: flex;
-    justify-content: center; /* Centraliza os links de navegação */
+    justify-content: center;
     align-items: center;
     box-shadow: var(--card-shadow);
     position: sticky;
@@ -134,16 +131,15 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(135deg, #2A363B 0%, #3F51B5 100%);
     color: var(--text-color-dark);
     text-align: center;
-    padding: 30px 8% 100px; 
+    padding: 30px 8% 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     min-height: calc(100vh - 70px);
 }
 
@@ -156,14 +152,14 @@ nav ul li a.active::after {
     color: var(--text-color-dark);
     font-size: 3.5rem;
     margin-top: 10px;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     line-height: 1.2;
 }
 
 .hero h2 {
     color: var(--secondary-color);
     font-size: 2.5rem;
-    margin-top: 0px; 
+    margin-top: 0px;
     margin-bottom: 5px;
     height: 3rem;
     display: flex;
@@ -175,15 +171,13 @@ nav ul li a.active::after {
     display: none;
 }
 
-/* Estilos para o efeito de digitação */
 #typed-text {
-    border-right: 2px solid var(--accent-color); 
-    white-space: nowrap; 
-    overflow: hidden; 
-    animation: blink-caret 0.75s step-end infinite; 
+    border-right: 2px solid var(--accent-color);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
 }
 
-/* Animação do cursor piscando */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--accent-color); }
@@ -193,7 +187,7 @@ nav ul li a.active::after {
     font-size: 1.2rem;
     line-height: 1.6;
     max-width: 750px;
-    margin: 5px auto 30px; 
+    margin: 5px auto 30px;
     font-weight: 300;
     color: var(--text-color-light);
 }
@@ -225,20 +219,19 @@ nav ul li a.active::after {
     transform: translateY(-5px);
 }
 
-/* Estilo para agrupar os botões na seção Hero */
 .hero-buttons {
     display: flex;
-    flex-direction: column; /* Alinha os itens em coluna (um abaixo do outro) */
-    gap: 20px; /* Espaço entre os botões (vertical) */
-    margin-top: 30px; /* Espaçamento acima dos botões */
-    align-items: center; /* Centraliza os botões horizontalmente */
-    justify-content: center; /* Centraliza os botões (se a coluna for mais larga que o conteúdo) */
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-cta {
     display: inline-block;
-    background-color: var(--primary-color); 
-    color: var(--text-color-dark); 
+    background-color: var(--primary-color);
+    color: var(--text-color-dark);
     padding: 18px 40px;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -250,24 +243,11 @@ nav ul li a.active::after {
 }
 
 .btn-cta:hover {
-    background-color: #6C91E6; 
+    background-color: #6C91E6;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* REMOVIDO: Estilo específico para .btn-download-cv para que ele herde de .btn-cta */
-/*
-.btn-cta.btn-download-cv {
-    background-color: var(--secondary-color);
-    color: var(--bg-dark);
-}
-
-.btn-cta.btn-download-cv:hover {
-    background-color: #90A4AE;
-}
-*/
-
-/* Habilidades */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -281,14 +261,14 @@ nav ul li a.active::after {
     background-color: var(--bg-light);
     border-radius: 10px;
     box-shadow: var(--card-shadow);
-    padding: 30px; 
+    padding: 30px;
     text-align: center;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     border-top: 5px solid var(--primary-color);
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 .skill-category:hover {
@@ -301,7 +281,7 @@ nav ul li a.active::after {
     font-size: 1.8rem;
     margin-bottom: 15px;
     position: relative;
-    transform: translateY(-10px); 
+    transform: translateY(-10px);
 }
 
 .skill-category h3::after {
@@ -322,7 +302,7 @@ nav ul li a.active::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transform: translateY(-10px); 
+    transform: translateY(-10px);
 }
 
 .skill-category ul li {
@@ -336,7 +316,6 @@ nav ul li a.active::after {
     border-bottom: none;
 }
 
-/* Experiência - ALINHAMENTO E CORES DO DARK MODE */
 .timeline {
     max-width: 960px;
     margin: 0 auto;
@@ -363,7 +342,7 @@ nav ul li a.active::after {
     padding: 18px 22px;
     margin-bottom: 25px;
     position: relative;
-    width: calc(48.3% - 40px);
+    width: calc(50% - 40px);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     cursor: pointer;
 }
@@ -382,33 +361,29 @@ nav ul li a.active::after {
     border-radius: 50%;
     border: 3px solid var(--bg-dark);
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-50%);
     z-index: 1;
 }
 
-/* Posição dos itens e seus círculos */
+.timeline-item:nth-child(odd) .timeline-item::before {
+    left: calc(100% + 20px);
+}
+
+.timeline-item:nth-child(even) .timeline-item::before {
+    right: calc(100% + 20px);
+}
+
+
 .timeline-item:nth-child(odd) {
     left: 0;
-    margin-right: 35px;
+    margin-right: 25px;
 }
 
 .timeline-item:nth-child(even) {
-    left: 47.8%;
-    margin-left: 35px;
+    left: 50%;
+    margin-left: 25px;
 }
 
-/* Posição das bolinhas */
-.timeline-item:nth-child(odd)::before {
-    right: -23.5px;
-    left: unset;
-}
-
-.timeline-item:nth-child(even)::before {
-    left: -23.5px;
-    right: unset;
-}
-
-/* Estilo para interatividade ao clicar */
 .timeline-item.active-timeline {
     border: 2px solid var(--accent-color);
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
@@ -445,7 +420,6 @@ nav ul li a.active::after {
     line-height: 1.4;
 }
 
-/* Formação */
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -465,14 +439,14 @@ nav ul li a.active::after {
     border-bottom: 5px solid var(--accent-color);
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 .education-item h3,
 .education-item p,
 .education-item .education-date {
-    transform: translateY(-10px); 
+    transform: translateY(-10px);
 }
 
 
@@ -499,7 +473,6 @@ nav ul li a.active::after {
     color: var(--text-color-light);
 }
 
-/* Certificados */
 .certificates ul {
     list-style: none;
     padding: 0;
@@ -528,10 +501,9 @@ nav ul li a.active::after {
     background-color: #37474F;
 }
 
-/* Contato */
 #contato {
     text-align: center;
-    margin-top: 80px; /* Adiciona uma margem superior para separá-la de 'Certificados' */
+    margin-top: 80px;
 }
 
 .contact-info {
@@ -558,7 +530,6 @@ nav ul li a.active::after {
     font-size: 1.4rem;
 }
 
-/* Footer */
 footer {
     background-color: var(--bg-dark);
     color: var(--text-color-light);
@@ -570,7 +541,6 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-/* Media Queries para Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -587,36 +557,34 @@ footer {
     nav ul li {
         margin: 5px 10px;
     }
-    
-    /* Garante que não haja margin-left excessivo no primeiro item em mobile */
-    nav ul li:first-child { 
+
+    nav ul li:first-child {
         margin-left: 10px;
     }
 
     .hero {
-        padding-top: 20px; 
+        padding-top: 20px;
     }
 
     .hero h1 {
-        font-size: 2.5rem; 
-        margin-bottom: 5px; 
+        font-size: 2.5rem;
+        margin-bottom: 5px;
     }
 
     .hero h2 {
-        font-size: 1.8rem; 
-        margin-bottom: 5px; 
-        height: 2.5rem; 
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+        height: 2.5rem;
     }
 
     .hero p {
         font-size: 1.1rem;
-        margin-top: 5px; 
+        margin-top: 5px;
     }
 
-    /* Ajuste para botões responsivos - já está em coluna por padrão, mas pode ser ajustado aqui se quiser */
     .hero-buttons {
-        flex-direction: column; /* Manter em coluna em telas menores também, se já não estiver */
-        gap: 15px; /* Espaço entre os botões empilhados */
+        flex-direction: column;
+        gap: 15px;
     }
 
     h2 {
@@ -628,7 +596,7 @@ footer {
     }
 
     .section-padded {
-        padding: 8px 8%; 
+        padding: 8px 8%;
     }
 
     .skills-grid,
@@ -636,10 +604,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Correções para responsividade da timeline */
     .timeline::before {
         left: 20px;
-        transform: translateX(0);
+        transform: translateX(-50%);
     }
 
     .timeline-item {
@@ -655,9 +622,9 @@ footer {
         transform: translateX(0);
     }
 
-    .timeline-item:nth-child(odd)::before,
-    .timeline-item:nth-child(even)::before {
-        left: -23.5px;
+    .timeline-item::before {
+        left: 20px;
+        transform: translateY(-50%) translateX(-50%);
         right: unset;
     }
 }
@@ -668,12 +635,12 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2rem; 
+        font-size: 2rem;
     }
 
     .hero h2 {
-        font-size: 1.5rem; 
-        height: 2rem; 
+        font-size: 1.5rem;
+        height: 2rem;
     }
 
     .social-links a {
