@@ -5,7 +5,7 @@ Olá! Bem-vindo(a) ao meu portfólio pessoal. Este projeto foi desenvolvido para
 ## 🔗 Acesse o Portfólio Online
 
 Você pode visitar a versão publicada do meu portfólio aqui:
-[**[Link para o seu Portfólio Online]**]([https://rafael-ps-ads.github.io/Portfolio1/])
+[**Acesse meu Portfólio Online aqui!**](https://rafael-ps-ads.github.io/Portfolio1/)
 
 ## ✨ Visão Geral do Projeto
 
