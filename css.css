@@ -1,0 +1,704 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+
+:root {
+    /* Paleta de Cores para Modo Escuro */
+    --primary-color: #82AAFF; /* Azul suave para títulos, logo, linha da timeline */
+    --secondary-color: #B0BEC5; /* Cinza azulado claro para detalhes */
+    --accent-color: #C3E88D; /* Verde-claro para destaque/botões/hover */
+    --text-color-dark: #ECEFF1; /* Texto quase branco para títulos */
+    --text-color-light: #CFD8DC; /* Texto cinza claro para parágrafos */
+    --bg-light: #263238; /* Fundo suave de seções (cards, skills) */
+    --bg-dark: #212121; /* Fundo principal do body, header, footer */
+    --white: #ffffff; /* Mantido para usos muito específicos ou bordas */
+    --border-color: #37474F; /* Cor para bordas sutis */
+    --card-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Sombra mais escura */
+    --transition-speed: 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color-light);
+    background-color: var(--bg-dark);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color-dark);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.8rem;
+    position: relative;
+    color: var(--primary-color);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.section-padded {
+    padding: 13px 8%; 
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--bg-dark);
+    color: var(--text-color-dark);
+    padding: 1rem 8%;
+    display: flex;
+    justify-content: center; /* Centraliza os links de navegação */
+    align-items: center;
+    box-shadow: var(--card-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 5px 17.5px;
+}
+
+nav ul li a {
+    color: var(--text-color-light);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color var(--transition-speed);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: -8px;
+    left: 0;
+    transition: width var(--transition-speed);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--accent-color);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #2A363B 0%, #3F51B5 100%);
+    color: var(--text-color-dark);
+    text-align: center;
+    padding: 30px 8% 100px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: calc(100vh - 70px);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    color: var(--text-color-dark);
+    font-size: 3.5rem;
+    margin-top: 10px;
+    margin-bottom: 0px; 
+    line-height: 1.2;
+}
+
+.hero h2 {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-top: 0px; 
+    margin-bottom: 5px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h2::after {
+    display: none;
+}
+
+/* Estilos para o efeito de digitação */
+#typed-text {
+    border-right: 2px solid var(--accent-color); 
+    white-space: nowrap; 
+    overflow: hidden; 
+    animation: blink-caret 0.75s step-end infinite; 
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color); }
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 5px auto 30px; 
+    font-weight: 300;
+    color: var(--text-color-light);
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--bg-light);
+    margin-bottom: 15px;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed);
+}
+
+.profile-pic:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin: 0 18px;
+    transition: transform var(--transition-speed), color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+/* Estilo para agrupar os botões na seção Hero */
+.hero-buttons {
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna (um abaixo do outro) */
+    gap: 20px; /* Espaço entre os botões (vertical) */
+    margin-top: 30px; /* Espaçamento acima dos botões */
+    align-items: center; /* Centraliza os botões horizontalmente */
+    justify-content: center; /* Centraliza os botões (se a coluna for mais larga que o conteúdo) */
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--primary-color); 
+    color: var(--text-color-dark); 
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: var(--card-shadow);
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.btn-cta:hover {
+    background-color: #6C91E6; 
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* REMOVIDO: Estilo específico para .btn-download-cv para que ele herde de .btn-cta */
+/*
+.btn-cta.btn-download-cv {
+    background-color: var(--secondary-color);
+    color: var(--bg-dark);
+}
+
+.btn-cta.btn-download-cv:hover {
+    background-color: #90A4AE;
+}
+*/
+
+/* Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.skill-category {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 30px; 
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.skill-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    position: relative;
+    transform: translateY(-10px); 
+}
+
+.skill-category h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-10px); 
+}
+
+.skill-category ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 1.05rem;
+    color: var(--text-color-light);
+}
+
+.skill-category ul li:last-child {
+    border-bottom: none;
+}
+
+/* Experiência - ALINHAMENTO E CORES DO DARK MODE */
+.timeline {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--primary-color);
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 18px 22px;
+    margin-bottom: 25px;
+    position: relative;
+    width: calc(48.3% - 40px);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    border: 3px solid var(--bg-dark);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Posição dos itens e seus círculos */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    margin-right: 35px;
+}
+
+.timeline-item:nth-child(even) {
+    left: 47.8%;
+    margin-left: 35px;
+}
+
+/* Posição das bolinhas */
+.timeline-item:nth-child(odd)::before {
+    right: -23.5px;
+    left: unset;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -23.5px;
+    right: unset;
+}
+
+/* Estilo para interatividade ao clicar */
+.timeline-item.active-timeline {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transform: scale(1.02);
+}
+
+.timeline-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.timeline-item .timeline-date {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.timeline-item ul {
+    list-style: disc;
+    margin-left: 15px;
+    padding: 0;
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    text-align: justify;
+}
+
+.timeline-item ul li {
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+
+/* Formação */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    align-items: stretch;
+}
+
+.education-item {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 25px;
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border-bottom: 5px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.education-item h3,
+.education-item p,
+.education-item .education-date {
+    transform: translateY(-10px); 
+}
+
+
+.education-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.education-item p {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.education-item .education-date {
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+
+/* Certificados */
+.certificates ul {
+    list-style: none;
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certificates ul li {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin: 8px;
+    font-size: 1rem;
+    color: var(--text-color-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+    cursor: default;
+}
+
+.certificates ul li:hover {
+    transform: translateY(-3px);
+    background-color: #37474F;
+}
+
+/* Contato */
+#contato {
+    text-align: center;
+    margin-top: 80px; /* Adiciona uma margem superior para separá-la de 'Certificados' */
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: var(--text-color-dark);
+    line-height: 1.4;
+}
+
+.contact-info i {
+    margin-right: 12px;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 25px;
+    font-size: 1rem;
+    margin-top: 50px;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        margin-top: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    /* Garante que não haja margin-left excessivo no primeiro item em mobile */
+    nav ul li:first-child { 
+        margin-left: 10px;
+    }
+
+    .hero {
+        padding-top: 20px; 
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; 
+        margin-bottom: 5px; 
+    }
+
+    .hero h2 {
+        font-size: 1.8rem; 
+        margin-bottom: 5px; 
+        height: 2.5rem; 
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        margin-top: 5px; 
+    }
+
+    /* Ajuste para botões responsivos - já está em coluna por padrão, mas pode ser ajustado aqui se quiser */
+    .hero-buttons {
+        flex-direction: column; /* Manter em coluna em telas menores também, se já não estiver */
+        gap: 15px; /* Espaço entre os botões empilhados */
+    }
+
+    h2 {
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+    }
+    h2::after {
+        margin: 6px auto 0;
+    }
+
+    .section-padded {
+        padding: 8px 8%; 
+    }
+
+    .skills-grid,
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Correções para responsividade da timeline */
+    .timeline::before {
+        left: 20px;
+        transform: translateX(0);
+    }
+
+    .timeline-item {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .timeline-item:nth-child(odd)::before,
+    .timeline-item:nth-child(even)::before {
+        left: -23.5px;
+        right: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem; 
+    }
+
+    .hero h2 {
+        font-size: 1.5rem; 
+        height: 2rem; 
+    }
+
+    .social-links a {
+        font-size: 2rem;
+        margin: 0 10px;
+    }
+
+    .btn-cta {
+        padding: 15px 30px;
+        font-size: 1.05rem;
+    }
+
+    .skill-category h3 {
+        font-size: 1.6rem;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .education-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+}
